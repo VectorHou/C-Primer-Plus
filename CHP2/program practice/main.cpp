@@ -21,12 +21,8 @@ void ConvertInputFurlongToYard()
 
 void Using3Function()
 {
-    void printtext(){
-        cout<<"Three blind mice"<<std::endl;
-    };
-    void printText(){
-        cout<<"See how they run"<<std::endl;
-    };
+    auto printtext = [](){ cout<<"Three blind mice"<<std::endl; };
+    auto printText = [](){ cout<<"See how they run"<<std::endl; };
     printtext();
     printtext();
     printText();
