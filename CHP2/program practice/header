@@ -3,9 +3,10 @@
 
 using std::string; //make string available
 using std::cout; //make cout available
+using std::cin; //make cin available
 
 //question1
-void DisplayNameAndAddress(string name, string address);
+void DisplayNameAndAddress();
 //question2
 void ConvertInputFurlongToYard();
 //question3
