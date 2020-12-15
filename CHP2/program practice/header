@@ -6,16 +6,16 @@ using std::cout; //make cout available
 using std::cin; //make cin available
 
 //question1
-void DisplayNameAndAddress();
+void func1();
 //question2
-void ConvertInputFurlongToYard();
+void func2();
 //question3
-void Using3Function();
+void func3();
 //question4
-void ConvertYearsToMonths();
+void func4();
 //question5
-void ConvertCelsiusToFahrenheit();
+void func5();
 //question6
-void ConvertLightyearToAstronomicalunits();
+void func6();
 //question7
-void DisplayHoursAndMinutes();
+void func7();
