@@ -1,1 +1,93 @@
 #include <iostream>
+
+using std::cout;
+using std::cin;
+void func1()
+{
+    cout<<"Please input your height:___\b\b\b";
+    const int conversion_factor = 12;
+    int height = 0, feet = 0, inches = 0;
+    cin>>height;
+    feet = height / 12;
+    inches = height % 12;
+    cout<<"your height is "<<feet<<" feets and "<<inches<<" inches!"<<std::endl;
+}
+
+void func2()
+{
+    cout<<"Please input your height(feet & inches) and weight(pounds):"<<std::endl;       
+    float feet = 0.0f, inches = 0.0f, pounds = 0.0f;
+    cout<<"feet:__\b\b"; 
+    cin>>feet;
+    cout<<"inches:__\b\b";
+    cin>>inches;
+    cout<<"pounds:__\b\b";
+    cin>>pounds;
+    const float feet_to_inches = 12.0f, inches_to_meters = 0.0254f, kg_to_pound = 2.2;
+    float meters = ((feet * feet_to_inches) + inches) * inches_to_meters;
+    float kg = pounds / kg_to_pound;
+    float BMI = kg / (meters * meters);
+    cout<<"your BMI is: "<<BMI<<std::endl;
+}
+
+void func3()
+{
+    cout<<"Enter a latitude in degrees, minutes, and seconds:"<<std::endl;
+    int degrees = 0, minutes = 0, seconds = 0;
+    const int conversion_factor = 60;
+    cout<<"First, enter the degrees:";
+    cin>>degrees;
+    cout<<"Next, enter the minutes of arc:";
+    cin>>minutes;
+    cout<<"Finally, enter the seconds of arc:";
+    cin>>seconds;
+    cout<<degrees<<" degrees, "<<minutes<<" minutes, "<<seconds<<" seconds ";
+    float degreesf = degrees + (float)minutes/(float)conversion_factor + (float)seconds/(float)conversion_factor/(float)conversion_factor;
+    cout<<"= "<<degreesf<<" degrees"<<std::endl;
+}
+
+void func4()
+{
+    cout<<"Enter the number of seconds:";
+    long long seconds = 0;
+    cin>>seconds;
+    const int day_to_hour = 24, hour_to_minute = 60, minute_to_second = 60;
+    cout<<seconds;
+    int second = seconds % minute_to_second;
+    seconds /= minute_to_second;
+    int minute = seconds % hour_to_minute;
+    seconds /= hour_to_minute;
+    int hour = seconds % day_to_hour;
+    int day = seconds / day_to_hour;
+    cout<<" seconds = "<<day<<" days, "<<hour<<" hours, "<<minute<<" minutes, "<<second<<" seconds"<<std::endl;
+}
+
+void func5()
+{
+    long World = 0, US = 0;
+    cout<<"Enter the world's population:";
+    cin>>World;
+    cout<<"Enter the population of the US:";
+    cin>>US;
+    cout<<"The population of the US is "<<(float)US*100.0f/(float)World<<"% of the world poplulation."<<std::endl;
+}
+
+void func6()
+{
+    float mileage = 0.0f, fuel_consumption = 0.0f;
+    cout<<"Enter the mileage(Km) of the car:";
+    cin>>mileage;
+    cout<<"Enter the car's fuel consumption(L):";
+    cin>>fuel_consumption;
+    cout<<"The fuel consumption of a car driving 100 km is:"<<fuel_consumption/mileage*100<<"L/100Km."<<std::endl;
+}
+
+void func7()
+{
+    float fuel_consumption = 0.0f;    
+    cout<<"Enter the fuel consumption of a car driving 100 km:";
+    cin>>fuel_consumption;
+    cout<<fuel_consumption;
+    fuel_consumption = 1 / (fuel_consumption / 3.875 / 62.14) ;
+    cout<<"L/100Km is "<<fuel_consumption<<"mpg."<<std::endl;
+}   

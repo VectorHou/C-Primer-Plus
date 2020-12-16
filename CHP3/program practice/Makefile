@@ -1,5 +1,5 @@
 target = main.out
 all:
-	g++ main.cpp -o $(target)
+	g++ main.cpp -o $(target) && ./$(target)
 clean:
-	rm $(target)
+	rm $(target)	
