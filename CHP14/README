@@ -15,7 +15,7 @@
     14.4.1 定义类模板
     14.4.2 使用模板类
     14.4.3 深入探讨模板类
-    14.4.4 数组模板示例和非类型参数
+    14.4.4 数组模板示例和非类型参数[自动变量维护的内存栈比new和delete管理的堆内存快]
     14.4.5 模板多功能性
     14.4.6 模板的具体化
     14.4.7 成员模板
@@ -44,8 +44,28 @@
         void Gloam::tell() { cout<<glip; Frabjous::tell(); }
         
     14.6.4
-        
+        class Stack
+        {
+        private:
+            enum {MAX = 10};
+            Worker* items{MAX};
+            int top;
+        public:
+            Stack();
+            bool isempty();
+            bool isfull();
+            bool push(const Worker* & itme);
+            bool pop(Worker* & item);
+        };
     14.6.5
+        a. ArrayTP<string> as;
+        b. Stack<double[]> sd;
+        c. Stack<Worker*> sw;
+        d. 4个：ArrayTP<int, 10>; ArrayTP<double, 10>; ArrayTP<int, 5>; ArrayTP< ArrayTP<int, 5>, 10>
     14.6.6
+        虚基类与非虚基类的区别：
+            1.虚基类使得从多个类（基类相同）派生出的对象只继承一个基类对象；非虚基类使得从多个类（基类相同）派生出的对象继承多个基类对象。
+            2.非虚基类允许信息通过中间类自动传递给基类；虚基类禁止信息通过中间类自动传递给基类。
+            3.使用非虚基类时，如果类从不同的类那里继承类两个或更多的同名成员（数据或方法），使用该成员名时，如果没有使用类名进行限定，将导致二义性；如果使用的是虚基类，则这样做不一定导致二义性。
 14.7 编程练习
     详见目录 ./program pratice
